@@ -1,0 +1,74 @@
+{
+ "job_id": "owl_ep01",
+ "shots": {
+  "s01": {
+   "prompt_id": "99956918-0243-42f9-ad47-21543a53e33e",
+   "kind": "r2v",
+   "submitted": 1789665840.7080517,
+   "seed": 3001,
+   "length": 243,
+   "attempts": 9,
+   "output": "owl_ep01/owl_ep01_s01_00001_.mp4",
+   "finished": 1789667193.74131,
+   "elapsed": 1353.0
+  },
+  "s02": {
+   "prompt_id": "20547d60-f7db-4296-9c06-5cf86569cc97",
+   "kind": "cont",
+   "submitted": 1789667195.4680572,
+   "seed": 3002,
+   "length": 243,
+   "attempts": 1,
+   "output": "owl_ep01/owl_ep01_s02_00001_.mp4",
+   "finished": 1789668460.4138732,
+   "elapsed": 1264.9
+  },
+  "s03": {
+   "prompt_id": "55680e59-4766-4df7-aca0-2be4ed3e3685",
+   "kind": "cont",
+   "submitted": 1789668461.4253755,
+   "seed": 3003,
+   "length": 243,
+   "attempts": 1,
+   "output": "owl_ep01/owl_ep01_s03_00001_.mp4",
+   "finished": 1789669766.5455124,
+   "elapsed": 1305.1
+  },
+  "s04": {
+   "prompt_id": "c2cfd524-96ca-4d2e-82ab-8be3d8845ac4",
+   "kind": "cont",
+   "submitted": 1789669767.6320827,
+   "seed": 3004,
+   "length": 243,
+   "attempts": 1,
+   "output": "owl_ep01/owl_ep01_s04_00001_.mp4",
+   "finished": 1789671072.55892,
+   "elapsed": 1304.9
+  },
+  "s05": {
+   "prompt_id": "11303b34-b887-4efc-82eb-699aae85fda6",
+   "kind": "cont",
+   "submitted": 1789671073.6349792,
+   "seed": 3005,
+   "length": 243,
+   "attempts": 1,
+   "output": "owl_ep01/owl_ep01_s05_00001_.mp4",
+   "finished": 1789672386.6354454,
+   "elapsed": 1313.0
+  },
+  "s06": {
+   "prompt_id": "c20b7cca-812b-45db-8e60-d697de6f1deb",
+   "kind": "cont",
+   "submitted": 1789672387.5786898,
+   "seed": 3006,
+   "length": 243,
+   "attempts": 1,
+   "output": "owl_ep01/owl_ep01_s06_00001_.mp4",
+   "finished": 1789673708.580393,
+   "elapsed": 1321.0
+  }
+ },
+ "created": 1789640791.8679247,
+ "job_file": "jobs/owl_ep01.json",
+ "release": "/workspace/minimax-h3-video-pipeline/releases/owl_ep01.mp4"
+}

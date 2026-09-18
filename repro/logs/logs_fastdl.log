@@ -1,0 +1,20 @@
+OK vae/minimax_h3_audio_vae_fp32.safetensors
+OK loras/minimax_h3_fl2v_turbo_4step_v1.0_768p_comfyui_bf16.safetensors
+OK loras/minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors
+RETRY0 diffusion_models/minimaRETRY0 diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors: [Errno 2] No such file or directory: '/workspace/minimax-h3-video-pipeline/models/diffusion_models/miniRETRY1 diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors: [Errno 2] No such file or directory: '/workspace/minimax-h3-video-pipeline/models/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors.part0292'
+OK diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors
+OK loras/minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors
+OK diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors
+OK vae/minimax_h3_video_vae_fp16.safetensors
+OK embeddings/minimaxh3_art_is_explosion.safetensors
+OK embeddings/minimaxh3_blooming_flowers.safetensors
+OK embeddings/minimaxh3_bullet_time.safetensors
+OK embeddings/minimaxh3_dark_magic.safetensors
+OK embeddings/minimaxh3_fire_breath.safetensors
+OK embeddings/minimaxh3_four_seasons.safetensors
+OK embeddings/minimaxh3_kiss_camera.safetensors
+OK embeddings/minimaxh3_spiral_ascent.safetensors
+OK embeddings/minimaxh3_storm_magic.safetensors
+OK embeddings/minimaxh3_truman_show.safetensors
+OK text_encoders/qwen3vl_32b_minimax_h3_int8_convrot.safetensors
+ALL_DONE
