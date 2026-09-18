@@ -1,0 +1,51 @@
+# ── 模型权重（75 GB）──
+# 不入库。重新获取：aria2c -i scripts/aria2.list -x16 -s16 -c
+# 校验：sha256sum -c scripts/models.sha256
+models/
+
+# ── Python 虚拟环境（6 GB）──
+# 重建方式见 docs/STACK.md
+env/
+
+# ── 第三方仓库（各自有独立 git 历史）──
+# ComfyUI    : gitcode.com/gh_mirrors/co/ComfyUI  (v0.34.2)
+# SageAttention: gitcode.com/gh_mirrors/sa/SageAttention (v2.2.0)
+ComfyUI/
+build_sage/
+
+# ── 官方工作流模板 ──
+# 来自 pip 包 comfyui_workflow_templates_json，非本项目内容
+workflows/
+
+# ── 生成产物 ──
+outputs/
+releases/
+# 保留一条样例成片做 demo(23MB);不想要就删掉这两行
+!releases/
+!releases/owl_ep01.mp4
+
+# ── 复现辅助(体积大或可重建,不入库)──
+# repro/scripts 与 repro/logs 入库;以下三个可按 REPRO_GUIDE.md 重建
+repro/tools/
+repro/wheels/
+repro/uvcache/
+
+# ── 运行时状态 ──
+logs/
+jobs/*.manifest.json
+*.pid
+
+# ── 素材 ──
+# 只保留 owl 一套角色设定图作为 make_character.py 的输出示例
+assets/*
+!assets/owl.json
+!assets/owl_sheet_*.png
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# ── 系统 ──
+.DS_Store
+Thumbs.db

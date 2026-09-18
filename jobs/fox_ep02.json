@@ -1,0 +1,21 @@
+{
+  "id": "fox_ep02",
+  "refs": ["fox_sheet.png"],
+  "concat": true,
+  "style": "Hand-drawn 2D animation, clean uniform medium-weight black outlines, flat cel shading, consistent cool moonlit blue and teal palette throughout. The same cartoon fox: orange fur, white chest and muzzle, dark brown ear tips and paws, thick dark eyebrows, freckled snout, white-tipped tail.",
+  "style_suffix": "Medium shot, the fox is fully visible and centered in frame from the very first frame. Do not change the art style, line weight, or color temperature.",
+  "defaults": {
+    "seconds": 10,
+    "megapixels": 0.98,
+    "aspect": "9:16 (Portrait Widescreen)",
+    "ref_size": "max",
+    "guide_frames": 22,
+    "guide_audio": true
+  },
+  "shots": [
+    { "name": "s01", "seed": 2001,
+      "prompt": "The fox sits on a mossy rock beside a still pond, watching a firefly land on its nose, then laughs. Camera slowly pushes in. Night crickets, soft water lapping, a light playful piano melody." },
+    { "name": "s02", "seed": 2002,
+      "prompt": "Continuing directly from the previous shot. The fox stands and trots toward the treeline, tail swishing, glancing back once. Camera tracks alongside. Crickets continue, soft paw steps, the same piano melody carries on." }
+  ]
+}

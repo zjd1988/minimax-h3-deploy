@@ -1,0 +1,35 @@
+{
+  "id": "fox_ep01",
+  "refs": ["fox_sheet.png"],
+  "concat": true,
+  "defaults": {
+    "seconds": 10,
+    "megapixels": 0.98,
+    "aspect": "9:16 (Portrait Widescreen)",
+    "ref_size": "max",
+    "guide_frames": 22,
+    "guide_audio": true
+  },
+  "shots": [
+    {
+      "name": "s01",
+      "seed": 1001,
+      "prompt": "Hand-drawn 2D animation, the cartoon fox. Medium shot, the fox is centered in frame from the very first frame. Moonlit riverbank at night, fireflies drifting over still water, cool blue and teal palette with warm firefly glow. The fox sits by the water and watches a firefly land on its nose, then laughs. Camera slowly pushes in. Night crickets, soft water lapping, a light playful piano melody."
+    },
+    {
+      "name": "s02",
+      "seed": 1002,
+      "prompt": "Continuing directly from the previous shot, same cartoon fox, same hand-drawn 2D animation style, same moonlit blue night palette. The fox stands up from the riverbank and trots toward the forest treeline, tail swishing, glancing back once over its shoulder. Camera follows alongside in a smooth tracking shot. Night crickets continue, soft paw steps on grass, the same piano melody carries on."
+    },
+    {
+      "name": "s03",
+      "seed": 1003,
+      "prompt": "Continuing directly from the previous shot, same cartoon fox, same hand-drawn 2D animation style, same moonlit blue night palette. The fox reaches the dark treeline and stops, ears perking up as it notices a warm golden light glowing between the trunks. It tilts its head, curious. Camera slowly cranes up behind the fox to reveal the glow. Crickets fade, a low mysterious cello note rises under the piano."
+    },
+    {
+      "name": "s04",
+      "seed": 1004,
+      "prompt": "Continuing directly from the previous shot, same cartoon fox, same hand-drawn 2D animation style. The fox steps into a clearing filled with hundreds of glowing fireflies, warm gold light washing over its orange fur against the deep blue night. It spins around once with delight, mouth open in a wide grin. Camera orbits around the fox. The piano swells warmly, fireflies chime softly."
+    }
+  ]
+}

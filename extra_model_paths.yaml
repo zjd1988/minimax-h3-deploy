@@ -1,0 +1,8 @@
+comfyui:
+    # 改成你本机 models/ 目录的绝对路径(相对路径则相对 ComfyUI 启动目录)
+    base_path: models/
+    diffusion_models: diffusion_models/
+    text_encoders: text_encoders/
+    vae: vae/
+    loras: loras/
+    embeddings: embeddings/

@@ -1,0 +1,17 @@
+[Unit]
+Description=Video pipeline driver (watch jobs/)
+After=comfyui.service
+Requires=comfyui.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/video-pipeline
+ExecStart=/root/miniconda3/bin/python /root/video-pipeline/driver/pipeline.py --watch
+Restart=on-failure
+RestartSec=20
+StandardOutput=append:/root/video-pipeline/logs/pipeline.log
+StandardError=append:/root/video-pipeline/logs/pipeline.log
+
+[Install]
+WantedBy=multi-user.target

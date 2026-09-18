@@ -1,0 +1,29 @@
+{
+  "id": "owl_ep01",
+  "refs": ["owl_sheet_0.png", "owl_sheet_1.png", "owl_sheet_2.png"],
+  "concat": true,
+  "style": "Hand-drawn 2D animation, clean uniform medium-weight black outlines, flat cel shading, warm golden-hour palette with deep teal shadows, consistent throughout. The same small round baby owl: huge amber eyes, cream chest feathers, warm brown speckled wings, two tiny ear tufts, orange beak and feet, small knitted red scarf.",
+  "style_suffix": "Keep the art style, line weight and color temperature identical to the previous shots. Do not restyle.",
+  "defaults": {
+    "seconds": 10,
+    "megapixels": 0.98,
+    "aspect": "9:16 (Portrait Widescreen)",
+    "ref_size": "max",
+    "guide_frames": 22,
+    "guide_audio": true
+  },
+  "shots": [
+    { "name": "s01", "seed": 3001,
+      "prompt": "Medium shot, the owl fully visible and centered in frame from the very first frame. It perches on a mossy branch at the top of a tall pine at sunrise, fluffing its feathers against the cold, then blinking awake as the first golden light hits its face. Camera slowly pushes in. Soft dawn wind, distant birdsong, a gentle solo piano motif begins." },
+    { "name": "s02", "seed": 3002,
+      "prompt": "Continuing directly from the previous shot. The owl notices a single red maple leaf spiralling past its branch. It follows the leaf with its eyes, head swivelling almost upside-down, then loses balance and windmills its wings. Camera holds steady. A soft comedic woodblock tick, wind gust, piano turns playful." },
+    { "name": "s03", "seed": 3003,
+      "prompt": "Continuing directly from the previous shot. The owl launches off the branch after the leaf, wings spread wide, gliding down through shafts of golden light between the pines. Camera tracks alongside in flight. Whoosh of air, wingbeats, the piano opens up into a rising melody." },
+    { "name": "s04", "seed": 3004,
+      "prompt": "Continuing directly from the previous shot. The owl swoops low over a mirror-still forest pond, its reflection racing beneath it, wingtip drawing a single ripple across the water. Camera skims just above the surface. Water ripple, a light string section joins the piano." },
+    { "name": "s05", "seed": 3005,
+      "prompt": "Continuing directly from the previous shot. The owl lands clumsily on the far bank in a pile of red leaves, tumbling once and popping upright with the maple leaf stuck on its head. It shakes it off and puffs up proudly. Camera settles into a medium shot. Rustling leaves, a soft comedic flourish, warm piano." },
+    { "name": "s06", "seed": 3006,
+      "prompt": "Continuing directly from the previous shot. The owl tucks the red leaf into its knitted scarf like a keepsake, looks up at the sunrise breaking fully over the treeline, and hoots once, contentedly. Camera cranes up slowly to reveal the whole golden forest. The full melody resolves warmly, birdsong swells, wind settles." }
+  ]
+}

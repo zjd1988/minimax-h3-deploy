@@ -1,0 +1,20 @@
+[Unit]
+Description=ComfyUI (MiniMax-H3 video pipeline)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/video-pipeline
+# LD_LIBRARY_PATH 由 start_comfyui.sh 内部导出，指向 CUDA 前向兼容层。
+# 没有它 torch 会加载系统的 535 驱动并报 "driver too old"，CUDA 不可用。
+ExecStart=/root/video-pipeline/scripts/start_comfyui.sh
+Restart=on-failure
+RestartSec=15
+# 模型加载要读 46GB 权重，给足启动时间
+TimeoutStartSec=900
+StandardOutput=append:/root/video-pipeline/logs/comfyui.log
+StandardError=append:/root/video-pipeline/logs/comfyui.log
+
+[Install]
+WantedBy=multi-user.target

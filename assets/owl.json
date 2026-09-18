@@ -1,0 +1,11 @@
+{
+ "name": "owl",
+ "desc": "a small round baby owl with huge amber eyes, cream chest, tiny orange beak, soft brown feathers",
+ "turnaround": "character/owl_turnaround_00001_.mp4",
+ "sheets": [
+  "owl_sheet_0.png",
+  "owl_sheet_1.png",
+  "owl_sheet_2.png"
+ ],
+ "created": 1789663944.0642827
+}
