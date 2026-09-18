@@ -1,12 +1,17 @@
 # video-pipeline
 
-**动画自媒体视频生产管线** —— 基于 MiniMax-H3（视频+音频一体生成）+ ComfyUI，
-跑在 `caoyang_lsem_dev01`（RTX 4090 D 24GB）。
+**动画自媒体视频生产管线** —— 基于 MiniMax-H3（视频+音频一体生成）+ ComfyUI。
+原跑在 RTX 4090 D 24GB,已在本仓库于 **2× RTX 3090(24GB)完整复现**:
+样例成片 `releases/owl_ep01.mp4`(60s 竖屏,音画一体)。
+
+> 从零复现见 **[docs/REPRO_GUIDE.md](docs/REPRO_GUIDE.md)**(步骤+十大踩坑点),
+> 单机适配细节见 [docs/LOCAL_REBUILD.md](docs/LOCAL_REBUILD.md)。
 
 一条命令出一条 60 秒竖屏动画：角色一致、镜头衔接、自带配乐音效，
 768×1344 直出，发抖音/小红书不用裁切。
 
-**状态：已跑通，可日常使用。** 实测 ≈ 21 分钟出一条 60 秒成片。
+**状态：已跑通，可日常使用。** 4090 D 实测 ≈ 21 分钟出一条 60 秒成片;
+3090(novram 模式)约 131 分钟,提速方向见 REPRO_GUIDE.md。
 
 ---
 
