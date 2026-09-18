@@ -1,51 +1,48 @@
- 只忽略项目根的运行日志,保留 repro/logs/# ── 模型权重（75 GB）──
- 只忽略项目根的运行日志,保留 repro/logs/# 不入库。重新获取：aria2c -i scripts/aria2.list -x16 -s16 -c
- 只忽略项目根的运行日志,保留 repro/logs/# 校验：sha256sum -c scripts/models.sha256
- 只忽略项目根的运行日志,保留 repro/logs/models/
- 只忽略项目根的运行日志,保留 repro/logs/
- 只忽略项目根的运行日志,保留 repro/logs/# ── Python 虚拟环境（6 GB）──
- 只忽略项目根的运行日志,保留 repro/logs/# 重建方式见 docs/STACK.md
- 只忽略项目根的运行日志,保留 repro/logs/env/
- 只忽略项目根的运行日志,保留 repro/logs/
- 只忽略项目根的运行日志,保留 repro/logs/# ── 第三方仓库（各自有独立 git 历史）──
- 只忽略项目根的运行日志,保留 repro/logs/# ComfyUI    : gitcode.com/gh_mirrors/co/ComfyUI  (v0.34.2)
- 只忽略项目根的运行日志,保留 repro/logs/# SageAttention: gitcode.com/gh_mirrors/sa/SageAttention (v2.2.0)
- 只忽略项目根的运行日志,保留 repro/logs/ComfyUI/
- 只忽略项目根的运行日志,保留 repro/logs/build_sage/
- 只忽略项目根的运行日志,保留 repro/logs/
- 只忽略项目根的运行日志,保留 repro/logs/# ── 官方工作流模板 ──
- 只忽略项目根的运行日志,保留 repro/logs/# 来自 pip 包 comfyui_workflow_templates_json，非本项目内容
- 只忽略项目根的运行日志,保留 repro/logs/workflows/
- 只忽略项目根的运行日志,保留 repro/logs/
- 只忽略项目根的运行日志,保留 repro/logs/# ── 生成产物 ──
- 只忽略项目根的运行日志,保留 repro/logs/outputs/
- 只忽略项目根的运行日志,保留 repro/logs/releases/
- 只忽略项目根的运行日志,保留 repro/logs/# 保留一条样例成片做 demo(23MB);不想要就删掉这两行
- 只忽略项目根的运行日志,保留 repro/logs/!releases/
- 只忽略项目根的运行日志,保留 repro/logs/!releases/owl_ep01.mp4
- 只忽略项目根的运行日志,保留 repro/logs/
- 只忽略项目根的运行日志,保留 repro/logs/# ── 复现辅助(体积大或可重建,不入库)──
- 只忽略项目根的运行日志,保留 repro/logs/# repro/scripts 与 repro/logs 入库;以下三个可按 REPRO_GUIDE.md 重建
- 只忽略项目根的运行日志,保留 repro/logs/repro/tools/
- 只忽略项目根的运行日志,保留 repro/logs/repro/wheels/
- 只忽略项目根的运行日志,保留 repro/logs/repro/uvcache/
- 只忽略项目根的运行日志,保留 repro/logs/
- 只忽略项目根的运行日志,保留 repro/logs/# ── 运行时状态 ──
- 只忽略项目根的运行日志,保留 repro/logs/logs/
- 只忽略项目根的运行日志,保留 repro/logs/jobs/*.manifest.json
- 只忽略项目根的运行日志,保留 repro/logs/*.pid
- 只忽略项目根的运行日志,保留 repro/logs/
- 只忽略项目根的运行日志,保留 repro/logs/# ── 素材 ──
- 只忽略项目根的运行日志,保留 repro/logs/# 只保留 owl 一套角色设定图作为 make_character.py 的输出示例
- 只忽略项目根的运行日志,保留 repro/logs/assets/*
- 只忽略项目根的运行日志,保留 repro/logs/!assets/owl.json
- 只忽略项目根的运行日志,保留 repro/logs/!assets/owl_sheet_*.png
- 只忽略项目根的运行日志,保留 repro/logs/
- 只忽略项目根的运行日志,保留 repro/logs/# ── Python ──
- 只忽略项目根的运行日志,保留 repro/logs/__pycache__/
- 只忽略项目根的运行日志,保留 repro/logs/*.py[cod]
- 只忽略项目根的运行日志,保留 repro/logs/*.egg-info/
- 只忽略项目根的运行日志,保留 repro/logs/
- 只忽略项目根的运行日志,保留 repro/logs/# ── 系统 ──
- 只忽略项目根的运行日志,保留 repro/logs/.DS_Store
- 只忽略项目根的运行日志,保留 repro/logs/Thumbs.db
+# ── 模型权重（75 GB）──
+# 不入库。重新获取：多连接下载器 repro/scripts/fastdl.py（见 docs/REPRO_GUIDE.md）
+# 校验：sha256sum -c repro/scripts/models.local.sha256
+models/
+
+# ── Python 虚拟环境 ──
+# 重建方式见 docs/REPRO_GUIDE.md
+env/
+
+# ── 第三方仓库（各自有独立 git 历史）──
+ComfyUI/
+build_sage/
+
+# ── 官方工作流模板 ──
+workflows/
+
+# ── 生成产物 ──
+outputs/
+releases/
+# 保留一条样例成片做 demo(23MB);不想要就删掉下面两行
+!releases/
+!releases/owl_ep01.mp4
+
+# ── 复现辅助(体积大或可重建,不入库)──
+# repro/scripts 与 repro/logs 入库;以下可按 REPRO_GUIDE.md 重建
+repro/tools/
+repro/wheels/
+repro/uvcache/
+
+# ── 运行时状态(只忽略项目根,保留 repro/logs)──
+/logs/
+jobs/*.manifest.json
+*.pid
+
+# ── 素材 ──
+# 只保留 owl 一套角色设定图作为 make_character.py 的输出示例
+assets/*
+!assets/owl.json
+!assets/owl_sheet_*.png
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# ── 系统 ──
+.DS_Store
+Thumbs.db
