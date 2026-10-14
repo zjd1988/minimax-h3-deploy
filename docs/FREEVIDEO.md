@@ -75,6 +75,39 @@ torch 2.9.1 配套 triton 3.5.1;transformers 5.15.0 vs 我们 5.17.0。它的 se
 2. 暂不升级:FreeVideo 保持"已克隆未激活"状态——节点导入无害(仅 WARNING),
    原有 MiniMax-H3 管线完全不受影响(已实测)。
 
+## 4b. 部署实测结论(2026-10-14,驱动 570.133.07)
+
+**实测回答"能否用当前驱动完成部署":不能,必须升级宿主机驱动到 ≥580。**
+这是实验得出的硬性依赖,不是文档保守:
+
+| 实验 | 结果 |
+|---|---|
+| triton 3.7.1(CUDA 13 编译链)在 570 驱动 + 3090 上编译并运行最小 kernel | ✅ 成功(PTX JIT 路径向下兼容,数值正确) |
+| 本地补丁绕过 bootstrap.py 的 580 门禁后,完整 setup(装 PyTorch cu130 + CUDA13 运行时 + 引擎依赖) | ✅ 门禁通过,依赖安装成功 |
+| 安装末尾 encoder 自检 `torch._C._cuda_init()` | ❌ `RuntimeError: The NVIDIA driver on your system is too old (found version 12080)` |
+
+原理:triton 走 PTX JIT 可在老驱动上加载 kernel,但 **CUDA 13 完整运行时创建上下文
+需要驱动 API ≥13000**;NVIDIA 前向兼容包(cuda-compat)只支持数据中心卡,
+GeForce 3090 不适用,所以无法像原项目 4090D 那样用兼容层绕过(那是 535→13.0 的
+跨代兼容,同样仅限数据中心卡,原机驱动是 535+兼容包在 ML 平台镜像内预装)。
+
+失败现场与断点:安装产物保留在 `ComfyUI/custom_nodes/FreeVideo/envs/`(5.3 GB)与
+`setup-runs/20261014T021829Z-484066/`。**升级驱动后无需重头再来**,重跑同一条命令断点续装:
+
+```bash
+cd ComfyUI/custom_nodes/FreeVideo
+./freevideo setup --plain --reuse-models /path/to/models --gpu 1 \
+  --accept-model-license --yes --no-launch
+```
+
+本地补丁说明:为做本次部署测试,给 `freevideo_engine/bootstrap.py`(475 行附近)打了
+绕过 580 门禁的补丁(`LOCAL TEST PATCH` 注释)。升级驱动后此补丁可有可无;要还原:
+`git checkout freevideo_engine/bootstrap.py`。不想留 5.3 GB 半成品环境就删掉
+`ComfyUI/custom_nodes/FreeVideo/envs/`,setup 会重建。
+
+另注意:本次测试时 GPU0 被同宿主其他租户占满,setup 用 `--gpu 1` 指定第二张卡;
+共享宿主跑装前先 `nvidia-smi` 看卡是否空闲。
+
 ## 5. 与现有管线的关系
 
 接入成功后,两条管线并存:
