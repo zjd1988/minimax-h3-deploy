@@ -4,6 +4,42 @@
 任何 AI 代理(Claude Code / Codex / Cursor 等)在本仓库内**生成视频 prompt 或运行生成任务**
 之前,必须遵循本文件。
 
+## 0. 官方 skills 一览(skills/,按需选用)
+
+收录自 MiniMax-AI/MiniMax-H3 官方仓库。分两类:
+
+**可移植(必须用)**
+
+| Skill | 用途 |
+|---|---|
+| `h3-prompt-writing` | 所有视频 prompt 的基础写法(T2VA/I2VA/FL2VA/L2VA/Ref2VA),见第 1 节 |
+
+**风格化生成(内容宝贵,Hub 依赖需适配)**
+
+| Skill | 风格/用途 | 直接可复用资产 |
+|---|---|---|
+| `3d-animation-short-generator` | 故事驱动 3D 动画短片全流程 | `references/` 分镜表规范、QC 检查单、模型选择、降级策略——**与本仓库 pipeline.py 编排直接对应** |
+| `papercraft-stop-motion-explainer` | 纸艺定格科普/知识讲解 | 视觉隐喻、纸艺角色/场景设计规则、负面提示词 |
+| `paper-collage-explainer-generator` | 半调拼贴动画讲解 | 拼贴视觉语言、音效设计 |
+| `minimalist-product-ad-generator` | 极简产品广告片 | 卖点提炼、卡点排版分镜 |
+| `brand-promo-video-generator` | 品牌宣传片 | 叙事方向、节拍/镜头规划 |
+| `music-video-subtitle-generator` | MV/歌词字幕视频 | 卡点排版、多镜头拼接与 prompt 审计 |
+| `co-op-game-intro-generator` | 双人合作游戏开场 | 确认图工作流(先出确认图再生成)、UI 文案事件时序 |
+| `handdrawn-live-video-generator` | 手绘发光动画×实拍融合 | 15s 单场景 prompt 模板(变形/逃逸/延时跟拍结构) |
+
+**适配规则**:这些 skill 的 `SKILL.md` 里 hub 专属部分(canvas 画布、choice card 选择卡、
+`hub_generate_image/hub_generate_video` 工具)在本仓库不存在,**按下表映射**:
+
+| Hub 概念 | 本仓库等价物 |
+|---|---|
+| `hub_generate_video` | `driver/bench.py`(t2va)/ `bench_r2v.py`(r2va)/ `driver/pipeline.py`(多镜头) |
+| choice card 用户确认 | 直接在对话中向用户确认 |
+| canvas 产物排序 | `jobs/<id>.json` 分镜文件 + `releases/` 成片 |
+| 模型选择卡 | 固定 H3(本仓库只部署了 H3;`references/model-selection.md` 的降级思路仅作参考) |
+
+风格 skill 中的**画面描述词、风格规则、负面提示词、镜头语言**是通用资产,写 prompt 时照用;
+凡涉及"H3 prompt 最终结构"仍以 `h3-prompt-writing` 的指南为准。
+
 ## 1. 生成视频 prompt 前:必须使用 h3-prompt-writing skill
 
 官方 MiniMax-H3 仓库的提示词技能已收录在本仓库:
